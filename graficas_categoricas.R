@@ -51,3 +51,18 @@ ggplot() +
   theme(legend.position="none") +
   coord_equal()
 
+
+# ---------------------------------- #
+####  Pie de asignacionn categorica  ####
+# Respuesta motora
+pie(neuro[8:10],labels = categ[8:10],col = c("gray10","gray30","gray60"), main="Respuesta Tipo Motora",border = "white")
+
+# Respuesta al estimulo
+pie(neuro[4:7],labels = categ[4:7],col = c("darkolivegreen","darkolivegreen4","darkolivegreen3","darkolivegreen2"), main="Respuesta a Estímulo",border = "white")
+
+# Respuesta de contacto y contacto sostenido
+Cat <- c(sum(neuro[1:2]),neuro[3],sum(neuro[4:7]),sum(neuro[8:10]))
+nomb <- c("R.Contacto","R.Contacto Sostenido","R.Estimulo","R.Tipo Motora")
+
+pie(Cat,labels = nomb,col = c("pink","purple","blue","red"), main="Respuesta Tipo Motora",border = "white",init.angle = -30)
+
